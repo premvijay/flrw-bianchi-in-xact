@@ -1,0 +1,3378 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    126085,       3370]
+NotebookOptionsPosition[    122142,       3235]
+NotebookOutlinePosition[    122476,       3250]
+CellTagsIndexPosition[    122433,       3247]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "xAct`xCoba`", "       ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "xCoba", " ", "is", " ", "the", " ", "package", " ", "used", " ", 
+    "whenever", " ", "we", " ", "do", " ", "computions", " ", "involving", 
+    " ", 
+    RowBox[{"coordinatites", "/", "charts"}]}], "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.740294834684431*^9, 3.7402948525462723`*^9}, {
+  3.74036983235184*^9, 3.740369890608899*^9}, {3.761029731541237*^9, 
+  3.761029734380628*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{
+  3.740294855217245*^9, 3.740365972034706*^9, 3.740369402321218*^9, 
+   3.740371391491287*^9, 3.740371428056498*^9, 3.740461237269453*^9, 
+   3.740466233533849*^9, 3.740473889145728*^9, 3.744949418660944*^9, 
+   3.746158348415847*^9, 3.761021350574032*^9, 3.761028906515963*^9, 
+   3.761029394363923*^9, 3.761029496162623*^9, {3.7610297481709223`*^9, 
+   3.761029775450737*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xCoba`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"0.8.4\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2018", ",", "2", ",", "28"}], "}"}]}],
+  SequenceForm["Package xAct`xCoba`  version ", "0.8.4", ", ", {2018, 2, 28}],
+  
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.740294855217245*^9, 3.740365972034706*^9, 3.740369402321218*^9, 
+   3.740371391491287*^9, 3.740371428056498*^9, 3.740461237269453*^9, 
+   3.740466233533849*^9, 3.740473889145728*^9, 3.744949418660944*^9, 
+   3.746158348415847*^9, 3.761021350574032*^9, 3.761028906515963*^9, 
+   3.761029394363923*^9, 3.761029496162623*^9, {3.7610297481709223`*^9, 
+   3.7610297754516563`*^9}}],
+
+Cell[BoxData["\<\"CopyRight (C) 2005-2018, David Yllanes and Jose M. \
+Martin-Garcia, under the General Public License.\"\>"], "Print",
+ CellChangeTimes->{
+  3.740294855217245*^9, 3.740365972034706*^9, 3.740369402321218*^9, 
+   3.740371391491287*^9, 3.740371428056498*^9, 3.740461237269453*^9, 
+   3.740466233533849*^9, 3.740473889145728*^9, 3.744949418660944*^9, 
+   3.746158348415847*^9, 3.761021350574032*^9, 3.761028906515963*^9, 
+   3.761029394363923*^9, 3.761029496162623*^9, {3.7610297481709223`*^9, 
+   3.761029775453755*^9}}],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{
+  3.740294855217245*^9, 3.740365972034706*^9, 3.740369402321218*^9, 
+   3.740371391491287*^9, 3.740371428056498*^9, 3.740461237269453*^9, 
+   3.740466233533849*^9, 3.740473889145728*^9, 3.744949418660944*^9, 
+   3.746158348415847*^9, 3.761021350574032*^9, 3.761028906515963*^9, 
+   3.761029394363923*^9, 3.761029496162623*^9, {3.7610297481709223`*^9, 
+   3.7610297754559937`*^9}}],
+
+Cell[BoxData["\<\"These packages come with ABSOLUTELY NO WARRANTY; for \
+details type Disclaimer[]. This is free software, and you are welcome to \
+redistribute it under certain conditions. See the General Public License for \
+details.\"\>"], "Print",
+ CellChangeTimes->{
+  3.740294855217245*^9, 3.740365972034706*^9, 3.740369402321218*^9, 
+   3.740371391491287*^9, 3.740371428056498*^9, 3.740461237269453*^9, 
+   3.740466233533849*^9, 3.740473889145728*^9, 3.744949418660944*^9, 
+   3.746158348415847*^9, 3.761021350574032*^9, 3.761028906515963*^9, 
+   3.761029394363923*^9, 3.761029496162623*^9, {3.7610297481709223`*^9, 
+   3.7610297754581614`*^9}}],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{
+  3.740294855217245*^9, 3.740365972034706*^9, 3.740369402321218*^9, 
+   3.740371391491287*^9, 3.740371428056498*^9, 3.740461237269453*^9, 
+   3.740466233533849*^9, 3.740473889145728*^9, 3.744949418660944*^9, 
+   3.746158348415847*^9, 3.761021350574032*^9, 3.761028906515963*^9, 
+   3.761029394363923*^9, 3.761029496162623*^9, {3.7610297481709223`*^9, 
+   3.761029775460648*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"$PrePrint", "=", "ScreenDollarIndices"}], ";"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DefManifold", "[", 
+   RowBox[{"ST", ",", " ", "4", ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"d", ",", "e", ",", "f", ",", "i", ",", "j"}], "}"}]}], "]"}], 
+  "      ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "This", " ", "is", " ", "from", " ", "xTensor", " ", "to", " ", "define", 
+    " ", "a", " ", "manifold"}], "*)"}]}]], "Input",
+ CellChangeTimes->{{3.7402949516778193`*^9, 3.740294996154608*^9}, {
+  3.74036669631045*^9, 3.740366716374428*^9}, {3.7403699211692543`*^9, 
+  3.740369944128358*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefManifold", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"manifold \"\>", "\[InvisibleSpace]", "ST", 
+   "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefManifold, ": Defining ", 
+   "manifold ", $CellContext`ST, ". ", ""],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.740371428582006*^9, 3.740461237837739*^9, 3.740466233937565*^9, 
+   3.740473889684001*^9, 3.744949418995139*^9, 3.746158348937541*^9, 
+   3.761021351127881*^9, 3.761028907120051*^9, 3.761029394924529*^9, 
+   3.7610294967378674`*^9, {3.761029748686602*^9, 3.761029775717896*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefVBundle", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"vbundle \"\>", "\[InvisibleSpace]", "TangentST", 
+   "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefVBundle, ": Defining ", 
+   "vbundle ", $CellContext`TangentST, ". ", ""],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.740371428582006*^9, 3.740461237837739*^9, 3.740466233937565*^9, 
+   3.740473889684001*^9, 3.744949418995139*^9, 3.746158348937541*^9, 
+   3.761021351127881*^9, 3.761028907120051*^9, 3.761029394924529*^9, 
+   3.7610294967378674`*^9, {3.761029748686602*^9, 3.76102977574666*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DefChart", "[", 
+   RowBox[{"BL", ",", "ST", ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "1", ",", "2", ",", "3"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"t", "[", "]"}], ",", 
+      RowBox[{"r", "[", "]"}], ",", 
+      RowBox[{"\[Theta]", "[", "]"}], ",", 
+      RowBox[{"\[Phi]", "[", "]"}]}], "}"}]}], "]"}], "    ", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "Here", " ", "comes", " ", "the", " ", "job", " ", "of", " ", "xCoba"}], 
+    ",", " ", 
+    RowBox[{"we", " ", "define", " ", 
+     RowBox[{"chart", "/", "coordinates"}]}]}], "*)"}]}]], "Input",
+ CellChangeTimes->{{3.740295808728499*^9, 3.740295920859193*^9}, {
+  3.74036994832032*^9, 3.740369995641347*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefChart", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"chart \"\>", "\[InvisibleSpace]", "BL", 
+   "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xCoba`DefChart, ": Defining ", "chart ", $CellContext`BL, ". ", 
+   ""],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7403714286548433`*^9, 3.740461237970518*^9, 3.740466233978949*^9, 
+   3.740473889822857*^9, 3.7449494190524607`*^9, 3.746158349063448*^9, 
+   3.7610213512492867`*^9, 3.761028907238748*^9, 3.7610293950544777`*^9, 
+   3.761029496861058*^9, {3.761029748793271*^9, 3.761029775835268*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"coordinate scalar \"\>", "\[InvisibleSpace]", 
+   RowBox[{"t", "[", "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+   "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefTensor, ": Defining ", "coordinate scalar ", 
+   $CellContext`t[], ". ", ""],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7403714286548433`*^9, 3.740461237970518*^9, 3.740466233978949*^9, 
+   3.740473889822857*^9, 3.7449494190524607`*^9, 3.746158349063448*^9, 
+   3.7610213512492867`*^9, 3.761028907238748*^9, 3.7610293950544777`*^9, 
+   3.761029496861058*^9, {3.761029748793271*^9, 3.761029775836191*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"coordinate scalar \"\>", "\[InvisibleSpace]", 
+   RowBox[{"r", "[", "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+   "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefTensor, ": Defining ", "coordinate scalar ", 
+   $CellContext`r[], ". ", ""],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7403714286548433`*^9, 3.740461237970518*^9, 3.740466233978949*^9, 
+   3.740473889822857*^9, 3.7449494190524607`*^9, 3.746158349063448*^9, 
+   3.7610213512492867`*^9, 3.761028907238748*^9, 3.7610293950544777`*^9, 
+   3.761029496861058*^9, {3.761029748793271*^9, 3.7610297758376913`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"coordinate scalar \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[Theta]", "[", "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+   "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefTensor, ": Defining ", "coordinate scalar ", 
+   $CellContext`\[Theta][], ". ", ""],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7403714286548433`*^9, 3.740461237970518*^9, 3.740466233978949*^9, 
+   3.740473889822857*^9, 3.7449494190524607`*^9, 3.746158349063448*^9, 
+   3.7610213512492867`*^9, 3.761028907238748*^9, 3.7610293950544777`*^9, 
+   3.761029496861058*^9, {3.761029748793271*^9, 3.761029775839155*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"coordinate scalar \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[Phi]", "[", "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+   "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefTensor, ": Defining ", "coordinate scalar ", 
+   $CellContext`\[Phi][], ". ", ""],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7403714286548433`*^9, 3.740461237970518*^9, 3.740466233978949*^9, 
+   3.740473889822857*^9, 3.7449494190524607`*^9, 3.746158349063448*^9, 
+   3.7610213512492867`*^9, 3.761028907238748*^9, 3.7610293950544777`*^9, 
+   3.761029496861058*^9, {3.761029748793271*^9, 3.761029775840534*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefMapping", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"mapping \"\>", "\[InvisibleSpace]", "BL", 
+   "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefMapping, ": Defining ", "mapping ", $CellContext`BL, 
+   ". ", ""],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7403714286548433`*^9, 3.740461237970518*^9, 3.740466233978949*^9, 
+   3.740473889822857*^9, 3.7449494190524607`*^9, 3.746158349063448*^9, 
+   3.7610213512492867`*^9, 3.761028907238748*^9, 3.7610293950544777`*^9, 
+   3.761029496861058*^9, {3.761029748793271*^9, 3.7610297758419933`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefMapping", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"inverse mapping \"\>", "\[InvisibleSpace]", 
+   "iBL", "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefMapping, ": Defining ", 
+   "inverse mapping ", $CellContext`iBL, ". ", ""],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7403714286548433`*^9, 3.740461237970518*^9, 3.740466233978949*^9, 
+   3.740473889822857*^9, 3.7449494190524607`*^9, 3.746158349063448*^9, 
+   3.7610213512492867`*^9, 3.761028907238748*^9, 3.7610293950544777`*^9, 
+   3.761029496861058*^9, {3.761029748793271*^9, 3.761029775843335*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"mapping differential tensor \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"diBL", "[", 
+    RowBox[{
+     RowBox[{"-", "\[FormalE]"}], ",", "iBLd"}], "]"}], 
+   "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefTensor, ": Defining ", 
+   "mapping differential tensor ", 
+   $CellContext`diBL[-\[FormalE], $CellContext`iBLd], ". ", ""],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7403714286548433`*^9, 3.740461237970518*^9, 3.740466233978949*^9, 
+   3.740473889822857*^9, 3.7449494190524607`*^9, 3.746158349063448*^9, 
+   3.7610213512492867`*^9, 3.761028907238748*^9, 3.7610293950544777`*^9, 
+   3.761029496861058*^9, {3.761029748793271*^9, 3.761029775866637*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"mapping differential tensor \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"dBL", "[", 
+    RowBox[{
+     RowBox[{"-", "d"}], ",", "BL\[FormalE]"}], "]"}], 
+   "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefTensor, ": Defining ", 
+   "mapping differential tensor ", 
+   $CellContext`dBL[-$CellContext`d, $CellContext`BL\[FormalE]], ". ", ""],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7403714286548433`*^9, 3.740461237970518*^9, 3.740466233978949*^9, 
+   3.740473889822857*^9, 3.7449494190524607`*^9, 3.746158349063448*^9, 
+   3.7610213512492867`*^9, 3.761028907238748*^9, 3.7610293950544777`*^9, 
+   3.761029496861058*^9, {3.761029748793271*^9, 3.761029775868762*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefBasis", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"basis \"\>", "\[InvisibleSpace]", "BL", 
+   "\[InvisibleSpace]", "\<\". \"\>", 
+   "\[InvisibleSpace]", "\<\"Coordinated basis.\"\>"}],
+  SequenceForm[
+  "** ", xAct`xCoba`DefBasis, ": Defining ", "basis ", $CellContext`BL, ". ", 
+   "Coordinated basis."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7403714286548433`*^9, 3.740461237970518*^9, 3.740466233978949*^9, 
+   3.740473889822857*^9, 3.7449494190524607`*^9, 3.746158349063448*^9, 
+   3.7610213512492867`*^9, 3.761028907238748*^9, 3.7610293950544777`*^9, 
+   3.761029496861058*^9, {3.761029748793271*^9, 3.761029775870183*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefCovD", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"parallel derivative \"\>", "\[InvisibleSpace]", 
+   RowBox[{"PDBL", "[", 
+    RowBox[{"-", "d"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+   "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefCovD, ": Defining ", "parallel derivative ", 
+   $CellContext`PDBL[-$CellContext`d], ". ", ""],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7403714286548433`*^9, 3.740461237970518*^9, 3.740466233978949*^9, 
+   3.740473889822857*^9, 3.7449494190524607`*^9, 3.746158349063448*^9, 
+   3.7610213512492867`*^9, 3.761028907238748*^9, 3.7610293950544777`*^9, 
+   3.761029496861058*^9, {3.761029748793271*^9, 3.761029775871544*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"vanishing torsion tensor \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"TorsionPDBL", "[", 
+    RowBox[{"d", ",", 
+     RowBox[{"-", "e"}], ",", 
+     RowBox[{"-", "f"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+   "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefTensor, ": Defining ", "vanishing torsion tensor ", 
+   $CellContext`TorsionPDBL[$CellContext`d, -$CellContext`e, -$CellContext`f],
+    ". ", ""],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7403714286548433`*^9, 3.740461237970518*^9, 3.740466233978949*^9, 
+   3.740473889822857*^9, 3.7449494190524607`*^9, 3.746158349063448*^9, 
+   3.7610213512492867`*^9, 3.761028907238748*^9, 3.7610293950544777`*^9, 
+   3.761029496861058*^9, {3.761029748793271*^9, 3.761029775872921*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"symmetric Christoffel tensor \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"ChristoffelPDBL", "[", 
+    RowBox[{"d", ",", 
+     RowBox[{"-", "e"}], ",", 
+     RowBox[{"-", "f"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+   "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefTensor, ": Defining ", 
+   "symmetric Christoffel tensor ", 
+   $CellContext`ChristoffelPDBL[$CellContext`d, -$CellContext`e, \
+-$CellContext`f], ". ", ""],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7403714286548433`*^9, 3.740461237970518*^9, 3.740466233978949*^9, 
+   3.740473889822857*^9, 3.7449494190524607`*^9, 3.746158349063448*^9, 
+   3.7610213512492867`*^9, 3.761028907238748*^9, 3.7610293950544777`*^9, 
+   3.761029496861058*^9, {3.761029748793271*^9, 3.761029775874317*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"vanishing Riemann tensor \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"RiemannPDBL", "[", 
+    RowBox[{
+     RowBox[{"-", "d"}], ",", 
+     RowBox[{"-", "e"}], ",", 
+     RowBox[{"-", "f"}], ",", "i"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>",
+    "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefTensor, ": Defining ", "vanishing Riemann tensor ", 
+   $CellContext`RiemannPDBL[-$CellContext`d, -$CellContext`e, \
+-$CellContext`f, $CellContext`i], ". ", ""],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7403714286548433`*^9, 3.740461237970518*^9, 3.740466233978949*^9, 
+   3.740473889822857*^9, 3.7449494190524607`*^9, 3.746158349063448*^9, 
+   3.7610213512492867`*^9, 3.761028907238748*^9, 3.7610293950544777`*^9, 
+   3.761029496861058*^9, {3.761029748793271*^9, 3.761029775875923*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"vanishing Ricci tensor \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"RicciPDBL", "[", 
+    RowBox[{
+     RowBox[{"-", "d"}], ",", 
+     RowBox[{"-", "e"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+   "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefTensor, ": Defining ", "vanishing Ricci tensor ", 
+   $CellContext`RicciPDBL[-$CellContext`d, -$CellContext`e], ". ", ""],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7403714286548433`*^9, 3.740461237970518*^9, 3.740466233978949*^9, 
+   3.740473889822857*^9, 3.7449494190524607`*^9, 3.746158349063448*^9, 
+   3.7610213512492867`*^9, 3.761028907238748*^9, 3.7610293950544777`*^9, 
+   3.761029496861058*^9, {3.761029748793271*^9, 3.761029775877963*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"antisymmetric +1 density \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"etaUpBL", "[", 
+    RowBox[{"d", ",", "e", ",", "f", ",", "i"}], "]"}], 
+   "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefTensor, ": Defining ", "antisymmetric +1 density ", 
+   $CellContext`etaUpBL[$CellContext`d, $CellContext`e, $CellContext`f, \
+$CellContext`i], ". ", ""],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7403714286548433`*^9, 3.740461237970518*^9, 3.740466233978949*^9, 
+   3.740473889822857*^9, 3.7449494190524607`*^9, 3.746158349063448*^9, 
+   3.7610213512492867`*^9, 3.761028907238748*^9, 3.7610293950544777`*^9, 
+   3.761029496861058*^9, {3.761029748793271*^9, 3.761029775879766*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"antisymmetric -1 density \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"etaDownBL", "[", 
+    RowBox[{
+     RowBox[{"-", "d"}], ",", 
+     RowBox[{"-", "e"}], ",", 
+     RowBox[{"-", "f"}], ",", 
+     RowBox[{"-", "i"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+   "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefTensor, ": Defining ", "antisymmetric -1 density ", 
+   $CellContext`etaDownBL[-$CellContext`d, -$CellContext`e, -$CellContext`f, \
+-$CellContext`i], ". ", ""],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7403714286548433`*^9, 3.740461237970518*^9, 3.740466233978949*^9, 
+   3.740473889822857*^9, 3.7449494190524607`*^9, 3.746158349063448*^9, 
+   3.7610213512492867`*^9, 3.761028907238748*^9, 3.7610293950544777`*^9, 
+   3.761029496861058*^9, {3.761029748793271*^9, 3.761029775881255*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DefScalarFunction", "[", "a", "]"}], "  ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Define", " ", "scaling", " ", "factor", " ", "a", 
+    RowBox[{"(", "t", ")"}]}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.7403042204401217`*^9, 3.74030423176505*^9}, 
+   3.7403667319418163`*^9, {3.740370007560124*^9, 3.7403700429681587`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefScalarFunction", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"scalar function \"\>", "\[InvisibleSpace]", "a", 
+   "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefScalarFunction, ": Defining ", 
+   "scalar function ", $CellContext`a, ". ", ""],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.740371428738689*^9, 3.740461238157834*^9, 3.740466234052507*^9, 
+   3.7404738899958553`*^9, 3.744949419071175*^9, 3.7461583491920147`*^9, 
+   3.7610213513735533`*^9, 3.761028907369893*^9, 3.761029395174464*^9, 
+   3.761029496991125*^9, {3.76102974889485*^9, 3.76102977597059*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DefConstantSymbol", "[", "k", "]"}], "  ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Define", " ", "curvature", " ", "as", " ", "a", " ", "constant", " ", 
+    "k"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.7403042426932497`*^9, 3.740304252259383*^9}, {
+   3.740366734278631*^9, 3.740366735222045*^9}, {3.740370047048764*^9, 
+   3.740370066920342*^9}, 3.7403701114569807`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefConstantSymbol", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"constant symbol \"\>", "\[InvisibleSpace]", "k", 
+   "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefConstantSymbol, ": Defining ", 
+   "constant symbol ", $CellContext`k, ". ", ""],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.74037142880167*^9, 3.740461238270218*^9, 3.740466234073554*^9, 
+   3.7404738900943823`*^9, 3.7449494190971203`*^9, 3.74615834927309*^9, 
+   3.761021351453639*^9, 3.7610289074560137`*^9, 3.761029395251086*^9, 
+   3.7610294970689697`*^9, {3.761029748985182*^9, 3.7610297760530863`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DefConstantSymbol", "[", "c", "]"}], "  ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Define", " ", "speed", " ", "of", " ", "light", " ", "as", " ", "a", " ", 
+    "constant"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.740304257628993*^9, 3.740304281451899*^9}, 
+   3.740366740646133*^9, {3.740370073520953*^9, 3.74037010497665*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefConstantSymbol", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"constant symbol \"\>", "\[InvisibleSpace]", "c", 
+   "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefConstantSymbol, ": Defining ", 
+   "constant symbol ", $CellContext`c, ". ", ""],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.740371428860924*^9, 3.740461238384635*^9, 3.74046623409332*^9, 
+   3.740473890192354*^9, 3.7449494191217747`*^9, 3.746158349360148*^9, 
+   3.7610213515302057`*^9, 3.761028907541885*^9, 3.761029395326*^9, 
+   3.761029497145591*^9, {3.761029749084968*^9, 3.761029776131855*^9}}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"metric", " ", "=", " ", 
+   RowBox[{"CTensor", "[", 
+    RowBox[{
+     RowBox[{"DiagonalMatrix", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{"c", "^", "2"}]}], ",", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"a", "[", 
+           RowBox[{"t", "[", "]"}], "]"}], "^", "2"}], "/", 
+         RowBox[{"(", 
+          RowBox[{"1", "-", 
+           RowBox[{"k", "*", 
+            RowBox[{
+             RowBox[{"r", "[", "]"}], "^", "2"}]}]}], ")"}]}], ",", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"a", "[", 
+           RowBox[{"t", "[", "]"}], "]"}], "^", "2"}], "*", 
+         RowBox[{
+          RowBox[{"r", "[", "]"}], "^", "2"}]}], ",", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"a", "[", 
+           RowBox[{"t", "[", "]"}], "]"}], "^", "2"}], "*", 
+         RowBox[{
+          RowBox[{"r", "[", "]"}], "^", "2"}], "*", 
+         RowBox[{
+          RowBox[{"Sin", "[", 
+           RowBox[{"\[Theta]", "[", "]"}], "]"}], "^", "2"}]}]}], "}"}], 
+      "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "BL"}], ",", 
+       RowBox[{"-", "BL"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SetCMetric", "[", 
+   RowBox[{"metric", ",", " ", "BL", ",", 
+    RowBox[{"SignatureOfMetric", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "1", ",", "0"}], "}"}]}], ",", 
+    RowBox[{"Parallelize", "\[Rule]", "True"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"       ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "defining", " ", "metric", " ", "in", " ", "terms", " ", "of", " ", 
+    "coordinate", " ", "basis", " ", "BL", " ", "using", " ", "cTensor", " ", 
+    "from", " ", "xCoba"}], "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.740302252134218*^9, 3.7403022849298267`*^9}, {
+  3.740302680698368*^9, 3.740302884690547*^9}, {3.74030428563719*^9, 
+  3.74030429718753*^9}, {3.740366743367146*^9, 3.7403667454068413`*^9}, {
+  3.7403667900139427`*^9, 3.740366797526495*^9}, {3.740370122377158*^9, 
+  3.7403702169610033`*^9}, {3.761018433859108*^9, 3.761018440218305*^9}, {
+  3.761018519769227*^9, 3.761018522534062*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MetricCompute", "[", 
+   RowBox[{"metric", ",", "BL", ",", "All", ",", 
+    RowBox[{"Parallelize", "\[Rule]", "True"}]}], "]"}], "//", 
+  "AbsoluteTiming", "     ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Again", " ", "we", " ", "use", " ", "xCoba", " ", "to", " ", "compute", 
+    " ", "other", " ", "quatities"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.740369759423905*^9, 3.740369759640493*^9}, {
+  3.7403702255764303`*^9, 3.74037034168926*^9}, {3.7449494354673767`*^9, 
+  3.7449494364411*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.244472`", ",", "Null"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.74030360323346*^9, 3.7403043084610977`*^9, 3.740365980244417*^9, 
+   3.7403694107194967`*^9, 3.7403713924288063`*^9, 3.7403714357074213`*^9, 
+   3.7404612452141247`*^9, 3.740466240937601*^9, 3.74047389708972*^9, 
+   3.744949420990594*^9, 3.7461583513151827`*^9, 3.761021353602586*^9, 
+   3.7610289096726017`*^9, 3.76102939741669*^9, 3.7610294991700993`*^9, {
+   3.761029751188388*^9, 3.7610297766053247`*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cd", " ", "=", " ", 
+   RowBox[{"CovDOfMetric", "[", "metric", "]"}]}], ";", "       ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "Now", " ", "we", " ", "start", " ", "working", " ", "with", " ", 
+     "xTensor"}], ",", " ", 
+    RowBox[{
+    "firstly", " ", "it", " ", "computes", " ", "covariant", " ", 
+     "derivative", " ", "and", " ", "store", " ", "as", " ", "cd"}]}], " ", 
+   "*)"}]}]], "Input",
+ CellChangeTimes->{{3.740304358735787*^9, 3.740304378067337*^9}, {
+   3.740369749063945*^9, 3.7403697492881002`*^9}, {3.7403703488413877`*^9, 
+   3.740370352976926*^9}, {3.740370388857609*^9, 3.740370469601605*^9}, 
+   3.761018396066996*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"RicciScalar", "[", "cd", "]"}], "[", "]"}], "         ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "In", " ", "this", " ", "way", " ", "we", " ", "can", " ", "get", " ", 
+    "quantities", " ", "like", " ", "curvature", " ", "corresponding", " ", 
+    "to", " ", "the", " ", "covariant", " ", "derivative", " ", "using", " ", 
+    "xTensor", " ", "functions"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.7403043901146803`*^9, 3.740304419267212*^9}, {
+  3.7403703586170883`*^9, 3.7403703597293167`*^9}, {3.740370485577097*^9, 
+  3.740370584378192*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"6", " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox[
+       InterpretationBox[
+        StyleBox["c",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`c,
+        Editable->False], "2"], " ", 
+      InterpretationBox[
+       StyleBox["k",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`k,
+       Editable->False]}], "+", 
+     SuperscriptBox[
+      RowBox[{
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox["a",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`a,
+         Editable->False], "\[Prime]",
+        MultilineFunction->None], "[", 
+       InterpretationBox[
+        StyleBox["t",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`t[],
+        Editable->False], "]"}], "2"], "+", 
+     RowBox[{
+      RowBox[{
+       InterpretationBox[
+        StyleBox["a",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`a,
+        Editable->False], "[", 
+       InterpretationBox[
+        StyleBox["t",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`t[],
+        Editable->False], "]"}], " ", 
+      RowBox[{
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox["a",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`a,
+         Editable->False], "\[Prime]\[Prime]",
+        MultilineFunction->None], "[", 
+       InterpretationBox[
+        StyleBox["t",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`t[],
+        Editable->False], "]"}]}]}], ")"}]}], 
+  RowBox[{
+   SuperscriptBox[
+    InterpretationBox[
+     StyleBox["c",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`c,
+     Editable->False], "2"], " ", 
+   SuperscriptBox[
+    RowBox[{
+     InterpretationBox[
+      StyleBox["a",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`a,
+      Editable->False], "[", 
+     InterpretationBox[
+      StyleBox["t",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`t[],
+      Editable->False], "]"}], "2"]}]]], "Output",
+ CellChangeTimes->{
+  3.740304420891386*^9, 3.7403659806602707`*^9, 3.740369411117289*^9, 
+   3.7403713926077633`*^9, 3.740371435917962*^9, 3.7404612455299683`*^9, 
+   3.740466241211668*^9, 3.7404738974634943`*^9, 3.744949421132025*^9, 
+   3.746158351648864*^9, 3.7610213537856092`*^9, 3.76102890983398*^9, 
+   3.761029397559971*^9, 3.7610294993154783`*^9, {3.76102975129475*^9, 
+   3.7610297768268957`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Ricci", "[", "cd", "]"}]], "Input",
+ CellChangeTimes->{{3.740304563066142*^9, 3.740304594859981*^9}, {
+   3.7403668226943693`*^9, 3.740366826485611*^9}, {3.740370363689322*^9, 
+   3.7403703646169662`*^9}, {3.7403706111054688`*^9, 3.740370656785771*^9}, {
+   3.74037069819421*^9, 3.740370724378644*^9}, {3.74037075793821*^9, 
+   3.740370777290114*^9}, 3.740371026050722*^9}],
+
+Cell[BoxData[
+ RowBox[{"CTensor", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox[
+         RowBox[{"3", " ", 
+          RowBox[{
+           SuperscriptBox[
+            InterpretationBox[
+             StyleBox["a",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             $CellContext`a,
+             Editable->False], "\[Prime]\[Prime]",
+            MultilineFunction->None], "[", 
+           InterpretationBox[
+            StyleBox["t",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`t[],
+            Editable->False], "]"}]}], 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["a",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`a,
+           Editable->False], "[", 
+          InterpretationBox[
+           StyleBox["t",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`t[],
+           Editable->False], "]"}]]}], ",", "0", ",", "0", ",", "0"}], "}"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       FractionBox[
+        RowBox[{
+         RowBox[{"2", " ", 
+          SuperscriptBox[
+           InterpretationBox[
+            StyleBox["c",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`c,
+            Editable->False], "2"], " ", 
+          InterpretationBox[
+           StyleBox["k",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`k,
+           Editable->False]}], "+", 
+         RowBox[{"2", " ", 
+          SuperscriptBox[
+           RowBox[{
+            SuperscriptBox[
+             InterpretationBox[
+              StyleBox["a",
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              $CellContext`a,
+              Editable->False], "\[Prime]",
+             MultilineFunction->None], "[", 
+            InterpretationBox[
+             StyleBox["t",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             $CellContext`t[],
+             Editable->False], "]"}], "2"]}], "+", 
+         RowBox[{
+          RowBox[{
+           InterpretationBox[
+            StyleBox["a",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`a,
+            Editable->False], "[", 
+           InterpretationBox[
+            StyleBox["t",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`t[],
+            Editable->False], "]"}], " ", 
+          RowBox[{
+           SuperscriptBox[
+            InterpretationBox[
+             StyleBox["a",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             $CellContext`a,
+             Editable->False], "\[Prime]\[Prime]",
+            MultilineFunction->None], "[", 
+           InterpretationBox[
+            StyleBox["t",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`t[],
+            Editable->False], "]"}]}]}], 
+        RowBox[{
+         SuperscriptBox[
+          InterpretationBox[
+           StyleBox["c",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`c,
+           Editable->False], "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{"1", "-", 
+           RowBox[{
+            InterpretationBox[
+             StyleBox["k",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             $CellContext`k,
+             Editable->False], " ", 
+            SuperscriptBox[
+             InterpretationBox[
+              StyleBox["r",
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              $CellContext`r[],
+              Editable->False], "2"]}]}], ")"}]}]], ",", "0", ",", "0"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox[
+          InterpretationBox[
+           StyleBox["r",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`r[],
+           Editable->False], "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"2", " ", 
+            SuperscriptBox[
+             InterpretationBox[
+              StyleBox["c",
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              $CellContext`c,
+              Editable->False], "2"], " ", 
+            InterpretationBox[
+             StyleBox["k",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             $CellContext`k,
+             Editable->False]}], "+", 
+           RowBox[{"2", " ", 
+            SuperscriptBox[
+             RowBox[{
+              SuperscriptBox[
+               InterpretationBox[
+                StyleBox["a",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                $CellContext`a,
+                Editable->False], "\[Prime]",
+               MultilineFunction->None], "[", 
+              InterpretationBox[
+               StyleBox["t",
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               $CellContext`t[],
+               Editable->False], "]"}], "2"]}], "+", 
+           RowBox[{
+            RowBox[{
+             InterpretationBox[
+              StyleBox["a",
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              $CellContext`a,
+              Editable->False], "[", 
+             InterpretationBox[
+              StyleBox["t",
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              $CellContext`t[],
+              Editable->False], "]"}], " ", 
+            RowBox[{
+             SuperscriptBox[
+              InterpretationBox[
+               StyleBox["a",
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               $CellContext`a,
+               Editable->False], "\[Prime]\[Prime]",
+              MultilineFunction->None], "[", 
+             InterpretationBox[
+              StyleBox["t",
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              $CellContext`t[],
+              Editable->False], "]"}]}]}], ")"}]}], 
+        SuperscriptBox[
+         InterpretationBox[
+          StyleBox["c",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`c,
+          Editable->False], "2"]], ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0", ",", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox[
+          InterpretationBox[
+           StyleBox["r",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`r[],
+           Editable->False], "2"], " ", 
+         SuperscriptBox[
+          RowBox[{
+           InterpretationBox[
+            StyleBox["Sin",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            Sin,
+            Editable->False], "[", 
+           InterpretationBox[
+            StyleBox["\[Theta]",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`\[Theta][],
+            Editable->False], "]"}], "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"2", " ", 
+            SuperscriptBox[
+             InterpretationBox[
+              StyleBox["c",
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              $CellContext`c,
+              Editable->False], "2"], " ", 
+            InterpretationBox[
+             StyleBox["k",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             $CellContext`k,
+             Editable->False]}], "+", 
+           RowBox[{"2", " ", 
+            SuperscriptBox[
+             RowBox[{
+              SuperscriptBox[
+               InterpretationBox[
+                StyleBox["a",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                $CellContext`a,
+                Editable->False], "\[Prime]",
+               MultilineFunction->None], "[", 
+              InterpretationBox[
+               StyleBox["t",
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               $CellContext`t[],
+               Editable->False], "]"}], "2"]}], "+", 
+           RowBox[{
+            RowBox[{
+             InterpretationBox[
+              StyleBox["a",
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              $CellContext`a,
+              Editable->False], "[", 
+             InterpretationBox[
+              StyleBox["t",
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              $CellContext`t[],
+              Editable->False], "]"}], " ", 
+            RowBox[{
+             SuperscriptBox[
+              InterpretationBox[
+               StyleBox["a",
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               $CellContext`a,
+               Editable->False], "\[Prime]\[Prime]",
+              MultilineFunction->None], "[", 
+             InterpretationBox[
+              StyleBox["t",
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              $CellContext`t[],
+              Editable->False], "]"}]}]}], ")"}]}], 
+        SuperscriptBox[
+         InterpretationBox[
+          StyleBox["c",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`c,
+          Editable->False], "2"]]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "BL"}], ",", 
+     RowBox[{"-", "BL"}]}], "}"}], ",", "0"}], "]"}]], "Output",
+ CellChangeTimes->{{3.7403045695613003`*^9, 3.740304596070922*^9}, 
+   3.740365980784095*^9, 3.740369411251444*^9, 3.740371028156186*^9, 
+   3.7403713927155323`*^9, 3.740371435988143*^9, 3.7404612456474457`*^9, 
+   3.7404662412587976`*^9, 3.7404738975639343`*^9, 3.744949421156124*^9, 
+   3.7461583517391243`*^9, 3.7610213538688517`*^9, 3.761028909921619*^9, 
+   3.76102939765998*^9, 3.761029499422327*^9, {3.76102975140101*^9, 
+   3.761029776921768*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"metric", "[", 
+  RowBox[{
+   RowBox[{"-", "i"}], ",", 
+   RowBox[{"-", "j"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.740366280028307*^9, 3.740366293077265*^9}, {
+  3.740366838781707*^9, 3.740366842621632*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[GridBox[{
+     {
+      StyleBox[GridBox[{
+         {
+          TagBox[
+           TooltipBox[
+            RowBox[{"-", 
+             SuperscriptBox[
+              InterpretationBox[
+               StyleBox["c",
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               $CellContext`c,
+               Editable->False], "2"]}],
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"1", ",", "1"}], "}"}], "\[Rule]", 
+              RowBox[{"-", 
+                SuperscriptBox[
+                 InterpretationBox[
+                  StyleBox[
+                   RowBox[{"c"}], AutoSpacing -> False, ShowAutoStyles -> 
+                   False], $CellContext`c, Editable -> False], "2"]}]}]],
+           Annotation[#, {1, 1} -> -$CellContext`c^2, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"1", ",", "2"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {1, 2} -> 0, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"1", ",", "3"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {1, 3} -> 0, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"1", ",", "4"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {1, 4} -> 0, "Tooltip"]& ]},
+         {
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"2", ",", "1"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {2, 1} -> 0, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox[
+            FractionBox[
+             SuperscriptBox[
+              RowBox[{
+               InterpretationBox[
+                StyleBox["a",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                $CellContext`a,
+                Editable->False], "[", 
+               InterpretationBox[
+                StyleBox["t",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                $CellContext`t[],
+                Editable->False], "]"}], "2"], 
+             RowBox[{"1", "-", 
+              RowBox[{
+               InterpretationBox[
+                StyleBox["k",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                $CellContext`k,
+                Editable->False], " ", 
+               SuperscriptBox[
+                InterpretationBox[
+                 StyleBox["r",
+                  ShowAutoStyles->False,
+                  AutoSpacing->False],
+                 $CellContext`r[],
+                 Editable->False], "2"]}]}]],
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"2", ",", "2"}], "}"}], "\[Rule]", 
+              FractionBox[
+               SuperscriptBox[
+                RowBox[{
+                  InterpretationBox[
+                   StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], "[", 
+                  InterpretationBox[
+                   StyleBox[
+                   "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                   $CellContext`t[], Editable -> False], "]"}], "2"], 
+               RowBox[{"1", "-", 
+                 RowBox[{
+                   InterpretationBox[
+                    StyleBox[
+                    RowBox[{"k"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`k, Editable -> False], " ", 
+                   SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox[
+                    "r", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`r[], Editable -> False], "2"]}]}]]}]],
+           Annotation[#, {2, 2} -> $CellContext`a[
+                $CellContext`t[]]^2/(1 - $CellContext`k $CellContext`r[]^2), 
+            "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"2", ",", "3"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {2, 3} -> 0, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"2", ",", "4"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {2, 4} -> 0, "Tooltip"]& ]},
+         {
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"3", ",", "1"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {3, 1} -> 0, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"3", ",", "2"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {3, 2} -> 0, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox[
+            RowBox[{
+             SuperscriptBox[
+              RowBox[{
+               InterpretationBox[
+                StyleBox["a",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                $CellContext`a,
+                Editable->False], "[", 
+               InterpretationBox[
+                StyleBox["t",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                $CellContext`t[],
+                Editable->False], "]"}], "2"], " ", 
+             SuperscriptBox[
+              InterpretationBox[
+               StyleBox["r",
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               $CellContext`r[],
+               Editable->False], "2"]}],
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"3", ",", "3"}], "}"}], "\[Rule]", 
+              RowBox[{
+                SuperscriptBox[
+                 RowBox[{
+                   InterpretationBox[
+                    StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], "[", 
+                   InterpretationBox[
+                    StyleBox[
+                    "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`t[], Editable -> False], "]"}], "2"], " ", 
+                SuperscriptBox[
+                 InterpretationBox[
+                  StyleBox[
+                  "r", AutoSpacing -> False, ShowAutoStyles -> False], 
+                  $CellContext`r[], Editable -> False], "2"]}]}]],
+           Annotation[#, {3, 3} -> $CellContext`a[
+                $CellContext`t[]]^2 $CellContext`r[]^2, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"3", ",", "4"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {3, 4} -> 0, "Tooltip"]& ]},
+         {
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"4", ",", "1"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {4, 1} -> 0, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"4", ",", "2"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {4, 2} -> 0, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"4", ",", "3"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {4, 3} -> 0, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox[
+            RowBox[{
+             SuperscriptBox[
+              RowBox[{
+               InterpretationBox[
+                StyleBox["a",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                $CellContext`a,
+                Editable->False], "[", 
+               InterpretationBox[
+                StyleBox["t",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                $CellContext`t[],
+                Editable->False], "]"}], "2"], " ", 
+             SuperscriptBox[
+              InterpretationBox[
+               StyleBox["r",
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               $CellContext`r[],
+               Editable->False], "2"], " ", 
+             SuperscriptBox[
+              RowBox[{
+               InterpretationBox[
+                StyleBox["Sin",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                Sin,
+                Editable->False], "[", 
+               InterpretationBox[
+                StyleBox["\[Theta]",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                $CellContext`\[Theta][],
+                Editable->False], "]"}], "2"]}],
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"4", ",", "4"}], "}"}], "\[Rule]", 
+              RowBox[{
+                SuperscriptBox[
+                 RowBox[{
+                   InterpretationBox[
+                    StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], "[", 
+                   InterpretationBox[
+                    StyleBox[
+                    "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`t[], Editable -> False], "]"}], "2"], " ", 
+                SuperscriptBox[
+                 InterpretationBox[
+                  StyleBox[
+                  "r", AutoSpacing -> False, ShowAutoStyles -> False], 
+                  $CellContext`r[], Editable -> False], "2"], " ", 
+                SuperscriptBox[
+                 RowBox[{
+                   InterpretationBox[
+                    StyleBox[
+                    RowBox[{"Sin"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], Sin, Editable -> False], "[", 
+                   InterpretationBox[
+                    StyleBox[
+                    "\[Theta]", AutoSpacing -> False, ShowAutoStyles -> 
+                    False], 
+                    $CellContext`\[Theta][], Editable -> False], "]"}], 
+                 "2"]}]}]],
+           Annotation[#, {4, 4} -> $CellContext`a[
+                $CellContext`t[]]^2 $CellContext`r[]^2 Sin[
+                $CellContext`\[Theta][]]^2, "Tooltip"]& ]}
+        },
+        AutoDelete->False,
+        GridBoxDividers->{
+         "ColumnsIndexed" -> {1 -> RGBColor[1, 0, 0], 5 -> RGBColor[1, 0, 0]},
+           "RowsIndexed" -> {1 -> RGBColor[1, 0, 0], 5 -> RGBColor[1, 0, 0]}}],
+       FontSize->Small], 
+      StyleBox[GridBox[{
+         {" ", " "},
+         {"i", "j"}
+        },
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.], {
+             Offset[0.034999999999999996`]}, 
+            Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
+             Offset[0.]}}, "RowsIndexed" -> {}}],
+       FontSize->Rational[39, 4]]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.034999999999999996`]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  xAct`xCoba`CTensor[{{-$CellContext`c^2, 0, 0, 0}, {0, $CellContext`a[
+        $CellContext`t[]]^2/(1 - $CellContext`k $CellContext`r[]^2), 0, 0}, {
+    0, 0, $CellContext`a[
+        $CellContext`t[]]^2 $CellContext`r[]^2, 0}, {0, 0, 0, $CellContext`a[
+        $CellContext`t[]]^2 $CellContext`r[]^2 Sin[
+        $CellContext`\[Theta][]]^2}}, {-$CellContext`BL, -$CellContext`BL}, 
+   0][-$CellContext`i, -$CellContext`j],
+  Editable->False]], "Output",
+ CellChangeTimes->{
+  3.740366293889551*^9, 3.7403694115012074`*^9, 3.740371392887808*^9, 
+   3.740371436122159*^9, 3.740461245899744*^9, 3.740466241347575*^9, 
+   3.740473897773858*^9, 3.744949421213718*^9, 3.746158351984112*^9, 
+   3.761021353956622*^9, 3.761028910007846*^9, 3.761029397738702*^9, 
+   3.761029499509362*^9, {3.7610297515527697`*^9, 3.7610297770099363`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Ricci", "[", "cd", "]"}], "[", 
+   RowBox[{
+    RowBox[{"-", "i"}], ",", 
+    RowBox[{"-", "j"}]}], "]"}], "   ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"This", " ", "prints", " ", "out", " ", "the", " ", 
+    SubscriptBox["R", "ij"]}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.740366677415064*^9, 3.740366681905422*^9}, 
+   3.7403710194024277`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[GridBox[{
+     {
+      StyleBox[GridBox[{
+         {
+          TagBox[
+           TooltipBox[
+            RowBox[{"-", 
+             FractionBox[
+              RowBox[{"3", " ", 
+               RowBox[{
+                SuperscriptBox[
+                 InterpretationBox[
+                  StyleBox["a",
+                   ShowAutoStyles->False,
+                   AutoSpacing->False],
+                  $CellContext`a,
+                  Editable->False], "\[Prime]\[Prime]",
+                 MultilineFunction->None], "[", 
+                InterpretationBox[
+                 StyleBox["t",
+                  ShowAutoStyles->False,
+                  AutoSpacing->False],
+                 $CellContext`t[],
+                 Editable->False], "]"}]}], 
+              RowBox[{
+               InterpretationBox[
+                StyleBox["a",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                $CellContext`a,
+                Editable->False], "[", 
+               InterpretationBox[
+                StyleBox["t",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                $CellContext`t[],
+                Editable->False], "]"}]]}],
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"1", ",", "1"}], "}"}], "\[Rule]", 
+              RowBox[{"-", 
+                FractionBox[
+                 RowBox[{"3", " ", 
+                   RowBox[{
+                    SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], 
+                    "\[Prime]\[Prime]", MultilineFunction -> None], "[", 
+                    InterpretationBox[
+                    StyleBox[
+                    "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`t[], Editable -> False], "]"}]}], 
+                 RowBox[{
+                   InterpretationBox[
+                    StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], "[", 
+                   InterpretationBox[
+                    StyleBox[
+                    "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`t[], Editable -> False], "]"}]]}]}]],
+           Annotation[#, {1, 1} -> (-3) $CellContext`a[
+                $CellContext`t[]]^(-1) Derivative[2][$CellContext`a][
+               $CellContext`t[]], "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"1", ",", "2"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {1, 2} -> 0, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"1", ",", "3"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {1, 3} -> 0, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"1", ",", "4"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {1, 4} -> 0, "Tooltip"]& ]},
+         {
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"2", ",", "1"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {2, 1} -> 0, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["\<\"\[GrayCircle]\"\>",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"2", ",", "2"}], "}"}], "\[Rule]", 
+              FractionBox[
+               RowBox[{
+                 RowBox[{"2", " ", 
+                   SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"c"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`c, Editable -> False], "2"], " ", 
+                   InterpretationBox[
+                    StyleBox[
+                    RowBox[{"k"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`k, Editable -> False]}], "+", 
+                 RowBox[{"2", " ", 
+                   SuperscriptBox[
+                    RowBox[{
+                    SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], "\[Prime]", 
+                    MultilineFunction -> None], "[", 
+                    InterpretationBox[
+                    StyleBox[
+                    "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`t[], Editable -> False], "]"}], "2"]}], "+", 
+                 
+                 RowBox[{
+                   RowBox[{
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], "[", 
+                    InterpretationBox[
+                    StyleBox[
+                    "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`t[], Editable -> False], "]"}], " ", 
+                   RowBox[{
+                    SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], 
+                    "\[Prime]\[Prime]", MultilineFunction -> None], "[", 
+                    InterpretationBox[
+                    StyleBox[
+                    "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`t[], Editable -> False], "]"}]}]}], 
+               RowBox[{
+                 SuperscriptBox[
+                  InterpretationBox[
+                   StyleBox[
+                    RowBox[{"c"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`c, Editable -> False], "2"], " ", 
+                 RowBox[{"(", 
+                   RowBox[{"1", "-", 
+                    RowBox[{
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"k"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`k, Editable -> False], " ", 
+                    SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox[
+                    "r", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`r[], Editable -> False], "2"]}]}], 
+                   ")"}]}]]}]],
+           
+           Annotation[#, {2, 
+             2} -> $CellContext`c^(-2) (
+               1 - $CellContext`k $CellContext`r[]^2)^(-1) (
+              2 $CellContext`c^2 $CellContext`k + 
+              2 Derivative[1][$CellContext`a][
+                  $CellContext`t[]]^2 + $CellContext`a[
+                 $CellContext`t[]] Derivative[2][$CellContext`a][
+                 $CellContext`t[]]), "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"2", ",", "3"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {2, 3} -> 0, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"2", ",", "4"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {2, 4} -> 0, "Tooltip"]& ]},
+         {
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"3", ",", "1"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {3, 1} -> 0, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"3", ",", "2"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {3, 2} -> 0, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["\<\"\[GrayCircle]\"\>",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"3", ",", "3"}], "}"}], "\[Rule]", 
+              FractionBox[
+               RowBox[{
+                 SuperscriptBox[
+                  InterpretationBox[
+                   StyleBox[
+                   "r", AutoSpacing -> False, ShowAutoStyles -> False], 
+                   $CellContext`r[], Editable -> False], "2"], " ", 
+                 RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"2", " ", 
+                    SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"c"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`c, Editable -> False], "2"], " ", 
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"k"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`k, Editable -> False]}], "+", 
+                    RowBox[{"2", " ", 
+                    SuperscriptBox[
+                    RowBox[{
+                    SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], "\[Prime]", 
+                    MultilineFunction -> None], "[", 
+                    InterpretationBox[
+                    StyleBox[
+                    "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`t[], Editable -> False], "]"}], "2"]}], "+", 
+                    
+                    RowBox[{
+                    RowBox[{
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], "[", 
+                    InterpretationBox[
+                    StyleBox[
+                    "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`t[], Editable -> False], "]"}], " ", 
+                    RowBox[{
+                    SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], 
+                    "\[Prime]\[Prime]", MultilineFunction -> None], "[", 
+                    InterpretationBox[
+                    StyleBox[
+                    "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`t[], Editable -> False], "]"}]}]}], ")"}]}], 
+               
+               SuperscriptBox[
+                InterpretationBox[
+                 StyleBox[
+                  RowBox[{"c"}], AutoSpacing -> False, ShowAutoStyles -> 
+                  False], $CellContext`c, Editable -> False], "2"]]}]],
+           
+           Annotation[#, {3, 
+             3} -> $CellContext`c^(-2) $CellContext`r[]^2 (
+              2 $CellContext`c^2 $CellContext`k + 
+              2 Derivative[1][$CellContext`a][
+                  $CellContext`t[]]^2 + $CellContext`a[
+                 $CellContext`t[]] Derivative[2][$CellContext`a][
+                 $CellContext`t[]]), "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"3", ",", "4"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {3, 4} -> 0, "Tooltip"]& ]},
+         {
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"4", ",", "1"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {4, 1} -> 0, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"4", ",", "2"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {4, 2} -> 0, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"4", ",", "3"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {4, 3} -> 0, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["\<\"\[GrayCircle]\"\>",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"4", ",", "4"}], "}"}], "\[Rule]", 
+              FractionBox[
+               RowBox[{
+                 SuperscriptBox[
+                  InterpretationBox[
+                   StyleBox[
+                   "r", AutoSpacing -> False, ShowAutoStyles -> False], 
+                   $CellContext`r[], Editable -> False], "2"], " ", 
+                 SuperscriptBox[
+                  RowBox[{
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"Sin"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], Sin, Editable -> False], "[", 
+                    InterpretationBox[
+                    StyleBox[
+                    "\[Theta]", AutoSpacing -> False, ShowAutoStyles -> 
+                    False], 
+                    $CellContext`\[Theta][], Editable -> False], "]"}], "2"], 
+                 " ", 
+                 RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"2", " ", 
+                    SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"c"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`c, Editable -> False], "2"], " ", 
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"k"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`k, Editable -> False]}], "+", 
+                    RowBox[{"2", " ", 
+                    SuperscriptBox[
+                    RowBox[{
+                    SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], "\[Prime]", 
+                    MultilineFunction -> None], "[", 
+                    InterpretationBox[
+                    StyleBox[
+                    "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`t[], Editable -> False], "]"}], "2"]}], "+", 
+                    
+                    RowBox[{
+                    RowBox[{
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], "[", 
+                    InterpretationBox[
+                    StyleBox[
+                    "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`t[], Editable -> False], "]"}], " ", 
+                    RowBox[{
+                    SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], 
+                    "\[Prime]\[Prime]", MultilineFunction -> None], "[", 
+                    InterpretationBox[
+                    StyleBox[
+                    "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`t[], Editable -> False], "]"}]}]}], ")"}]}], 
+               
+               SuperscriptBox[
+                InterpretationBox[
+                 StyleBox[
+                  RowBox[{"c"}], AutoSpacing -> False, ShowAutoStyles -> 
+                  False], $CellContext`c, Editable -> False], "2"]]}]],
+           
+           Annotation[#, {4, 4} -> $CellContext`c^(-2) $CellContext`r[]^2 
+             Sin[
+                $CellContext`\[Theta][]]^2 (2 $CellContext`c^2 $CellContext`k + 
+              2 Derivative[1][$CellContext`a][
+                  $CellContext`t[]]^2 + $CellContext`a[
+                 $CellContext`t[]] Derivative[2][$CellContext`a][
+                 $CellContext`t[]]), "Tooltip"]& ]}
+        },
+        AutoDelete->False,
+        GridBoxDividers->{
+         "ColumnsIndexed" -> {1 -> RGBColor[1, 0, 0], 5 -> RGBColor[1, 0, 0]},
+           "RowsIndexed" -> {1 -> RGBColor[1, 0, 0], 5 -> RGBColor[1, 0, 0]}}],
+       FontSize->Small], 
+      StyleBox[GridBox[{
+         {" ", " "},
+         {"i", "j"}
+        },
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.], {
+             Offset[0.034999999999999996`]}, 
+            Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
+             Offset[0.]}}, "RowsIndexed" -> {}}],
+       FontSize->Rational[39, 4]]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.034999999999999996`]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  xAct`xCoba`CTensor[{{(-3) $CellContext`a[
+        $CellContext`t[]]^(-1) Derivative[2][$CellContext`a][
+       $CellContext`t[]], 0, 0, 0}, {
+    0, $CellContext`c^(-2) (1 - $CellContext`k $CellContext`r[]^2)^(-1) (
+      2 $CellContext`c^2 $CellContext`k + 2 Derivative[1][$CellContext`a][
+          $CellContext`t[]]^2 + $CellContext`a[
+         $CellContext`t[]] Derivative[2][$CellContext`a][
+         $CellContext`t[]]), 0, 0}, {
+    0, 0, $CellContext`c^(-2) $CellContext`r[]^2 (
+      2 $CellContext`c^2 $CellContext`k + 2 Derivative[1][$CellContext`a][
+          $CellContext`t[]]^2 + $CellContext`a[
+         $CellContext`t[]] Derivative[2][$CellContext`a][
+         $CellContext`t[]]), 0}, {
+    0, 0, 0, $CellContext`c^(-2) $CellContext`r[]^2 Sin[
+        $CellContext`\[Theta][]]^2 (2 $CellContext`c^2 $CellContext`k + 
+      2 Derivative[1][$CellContext`a][
+          $CellContext`t[]]^2 + $CellContext`a[
+         $CellContext`t[]] Derivative[2][$CellContext`a][
+         $CellContext`t[]])}}, {-$CellContext`BL, -$CellContext`BL}, 
+   0][-$CellContext`i, -$CellContext`j],
+  Editable->False]], "Output",
+ CellChangeTimes->{
+  3.740371035738549*^9, 3.7403713929684143`*^9, 3.740371436199032*^9, 
+   3.740461246030908*^9, 3.740466241382099*^9, 3.740473897885837*^9, 
+   3.7449494212506447`*^9, 3.746158352086376*^9, 3.7610213540433483`*^9, 
+   3.761028910099957*^9, 3.761029398104291*^9, 3.7610294995978107`*^9, {
+   3.761029751656889*^9, 3.761029777156053*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Einstein", "[", "cd", "]"}], "[", 
+  RowBox[{"i", ",", 
+   RowBox[{"-", "j"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.740366657333393*^9, 3.740366657342988*^9}, 
+   3.740371282866651*^9, 3.761018641271432*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[GridBox[{
+     {
+      StyleBox[GridBox[{
+         {
+          TagBox[
+           TooltipBox[
+            RowBox[{"-", 
+             FractionBox[
+              RowBox[{"3", " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{
+                  SuperscriptBox[
+                   InterpretationBox[
+                    StyleBox["c",
+                    ShowAutoStyles->False,
+                    AutoSpacing->False],
+                    $CellContext`c,
+                    Editable->False], "2"], " ", 
+                  InterpretationBox[
+                   StyleBox["k",
+                    ShowAutoStyles->False,
+                    AutoSpacing->False],
+                   $CellContext`k,
+                   Editable->False]}], "+", 
+                 SuperscriptBox[
+                  RowBox[{
+                   SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox["a",
+                    ShowAutoStyles->False,
+                    AutoSpacing->False],
+                    $CellContext`a,
+                    Editable->False], "\[Prime]",
+                    MultilineFunction->None], "[", 
+                   InterpretationBox[
+                    StyleBox["t",
+                    ShowAutoStyles->False,
+                    AutoSpacing->False],
+                    $CellContext`t[],
+                    Editable->False], "]"}], "2"]}], ")"}]}], 
+              RowBox[{
+               SuperscriptBox[
+                InterpretationBox[
+                 StyleBox["c",
+                  ShowAutoStyles->False,
+                  AutoSpacing->False],
+                 $CellContext`c,
+                 Editable->False], "2"], " ", 
+               SuperscriptBox[
+                RowBox[{
+                 InterpretationBox[
+                  StyleBox["a",
+                   ShowAutoStyles->False,
+                   AutoSpacing->False],
+                  $CellContext`a,
+                  Editable->False], "[", 
+                 InterpretationBox[
+                  StyleBox["t",
+                   ShowAutoStyles->False,
+                   AutoSpacing->False],
+                  $CellContext`t[],
+                  Editable->False], "]"}], "2"]}]]}],
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"1", ",", "1"}], "}"}], "\[Rule]", 
+              RowBox[{"-", 
+                FractionBox[
+                 RowBox[{"3", " ", 
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"c"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`c, Editable -> False], "2"], " ", 
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"k"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`k, Editable -> False]}], "+", 
+                    SuperscriptBox[
+                    RowBox[{
+                    SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], "\[Prime]", 
+                    MultilineFunction -> None], "[", 
+                    InterpretationBox[
+                    StyleBox[
+                    "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`t[], Editable -> False], "]"}], "2"]}], 
+                    ")"}]}], 
+                 RowBox[{
+                   SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"c"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`c, Editable -> False], "2"], " ", 
+                   SuperscriptBox[
+                    RowBox[{
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], "[", 
+                    InterpretationBox[
+                    StyleBox[
+                    "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`t[], Editable -> False], "]"}], "2"]}]]}]}]],
+           
+           Annotation[#, {1, 1} -> (-3) $CellContext`c^(-2) $CellContext`a[
+                $CellContext`t[]]^(-2) ($CellContext`c^2 $CellContext`k + 
+              Derivative[1][$CellContext`a][
+                 $CellContext`t[]]^2), "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"1", ",", "2"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {1, 2} -> 0, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"1", ",", "3"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {1, 3} -> 0, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"1", ",", "4"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {1, 4} -> 0, "Tooltip"]& ]},
+         {
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"2", ",", "1"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {2, 1} -> 0, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["\<\"\[GrayCircle]\"\>",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"2", ",", "2"}], "}"}], "\[Rule]", 
+              RowBox[{"-", 
+                FractionBox[
+                 RowBox[{
+                   RowBox[{
+                    SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"c"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`c, Editable -> False], "2"], " ", 
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"k"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`k, Editable -> False]}], "+", 
+                   SuperscriptBox[
+                    RowBox[{
+                    SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], "\[Prime]", 
+                    MultilineFunction -> None], "[", 
+                    InterpretationBox[
+                    StyleBox[
+                    "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`t[], Editable -> False], "]"}], "2"], "+", 
+                   RowBox[{"2", " ", 
+                    RowBox[{
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], "[", 
+                    InterpretationBox[
+                    StyleBox[
+                    "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`t[], Editable -> False], "]"}], " ", 
+                    RowBox[{
+                    SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], 
+                    "\[Prime]\[Prime]", MultilineFunction -> None], "[", 
+                    InterpretationBox[
+                    StyleBox[
+                    "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`t[], Editable -> False], "]"}]}]}], 
+                 RowBox[{
+                   SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"c"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`c, Editable -> False], "2"], " ", 
+                   SuperscriptBox[
+                    RowBox[{
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], "[", 
+                    InterpretationBox[
+                    StyleBox[
+                    "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`t[], Editable -> False], "]"}], "2"]}]]}]}]],
+           
+           Annotation[#, {2, 2} -> -$CellContext`c^(-2) $CellContext`a[
+                $CellContext`t[]]^(-2) ($CellContext`c^2 $CellContext`k + 
+              Derivative[1][$CellContext`a][
+                 $CellContext`t[]]^2 + 2 $CellContext`a[
+                 $CellContext`t[]] Derivative[2][$CellContext`a][
+                 $CellContext`t[]]), "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"2", ",", "3"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {2, 3} -> 0, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"2", ",", "4"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {2, 4} -> 0, "Tooltip"]& ]},
+         {
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"3", ",", "1"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {3, 1} -> 0, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"3", ",", "2"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {3, 2} -> 0, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["\<\"\[GrayCircle]\"\>",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"3", ",", "3"}], "}"}], "\[Rule]", 
+              RowBox[{"-", 
+                FractionBox[
+                 RowBox[{
+                   RowBox[{
+                    SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"c"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`c, Editable -> False], "2"], " ", 
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"k"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`k, Editable -> False]}], "+", 
+                   SuperscriptBox[
+                    RowBox[{
+                    SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], "\[Prime]", 
+                    MultilineFunction -> None], "[", 
+                    InterpretationBox[
+                    StyleBox[
+                    "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`t[], Editable -> False], "]"}], "2"], "+", 
+                   RowBox[{"2", " ", 
+                    RowBox[{
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], "[", 
+                    InterpretationBox[
+                    StyleBox[
+                    "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`t[], Editable -> False], "]"}], " ", 
+                    RowBox[{
+                    SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], 
+                    "\[Prime]\[Prime]", MultilineFunction -> None], "[", 
+                    InterpretationBox[
+                    StyleBox[
+                    "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`t[], Editable -> False], "]"}]}]}], 
+                 RowBox[{
+                   SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"c"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`c, Editable -> False], "2"], " ", 
+                   SuperscriptBox[
+                    RowBox[{
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], "[", 
+                    InterpretationBox[
+                    StyleBox[
+                    "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`t[], Editable -> False], "]"}], "2"]}]]}]}]],
+           
+           Annotation[#, {3, 3} -> -$CellContext`c^(-2) $CellContext`a[
+                $CellContext`t[]]^(-2) ($CellContext`c^2 $CellContext`k + 
+              Derivative[1][$CellContext`a][
+                 $CellContext`t[]]^2 + 2 $CellContext`a[
+                 $CellContext`t[]] Derivative[2][$CellContext`a][
+                 $CellContext`t[]]), "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"3", ",", "4"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {3, 4} -> 0, "Tooltip"]& ]},
+         {
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"4", ",", "1"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {4, 1} -> 0, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"4", ",", "2"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {4, 2} -> 0, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["0",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"4", ",", "3"}], "}"}], "\[Rule]", "0"}]],
+           Annotation[#, {4, 3} -> 0, "Tooltip"]& ], 
+          TagBox[
+           TooltipBox["\<\"\[GrayCircle]\"\>",
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"4", ",", "4"}], "}"}], "\[Rule]", 
+              RowBox[{"-", 
+                FractionBox[
+                 RowBox[{
+                   RowBox[{
+                    SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"c"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`c, Editable -> False], "2"], " ", 
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"k"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`k, Editable -> False]}], "+", 
+                   SuperscriptBox[
+                    RowBox[{
+                    SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], "\[Prime]", 
+                    MultilineFunction -> None], "[", 
+                    InterpretationBox[
+                    StyleBox[
+                    "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`t[], Editable -> False], "]"}], "2"], "+", 
+                   RowBox[{"2", " ", 
+                    RowBox[{
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], "[", 
+                    InterpretationBox[
+                    StyleBox[
+                    "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`t[], Editable -> False], "]"}], " ", 
+                    RowBox[{
+                    SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], 
+                    "\[Prime]\[Prime]", MultilineFunction -> None], "[", 
+                    InterpretationBox[
+                    StyleBox[
+                    "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`t[], Editable -> False], "]"}]}]}], 
+                 RowBox[{
+                   SuperscriptBox[
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"c"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`c, Editable -> False], "2"], " ", 
+                   SuperscriptBox[
+                    RowBox[{
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"a"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], $CellContext`a, Editable -> False], "[", 
+                    InterpretationBox[
+                    StyleBox[
+                    "t", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    $CellContext`t[], Editable -> False], "]"}], "2"]}]]}]}]],
+           
+           Annotation[#, {4, 4} -> -$CellContext`c^(-2) $CellContext`a[
+                $CellContext`t[]]^(-2) ($CellContext`c^2 $CellContext`k + 
+              Derivative[1][$CellContext`a][
+                 $CellContext`t[]]^2 + 2 $CellContext`a[
+                 $CellContext`t[]] Derivative[2][$CellContext`a][
+                 $CellContext`t[]]), "Tooltip"]& ]}
+        },
+        AutoDelete->False,
+        GridBoxDividers->{
+         "ColumnsIndexed" -> {1 -> RGBColor[1, 0, 0], 5 -> RGBColor[1, 0, 0]},
+           "RowsIndexed" -> {1 -> RGBColor[1, 0, 0], 5 -> RGBColor[1, 0, 0]}}],
+       FontSize->Small], 
+      StyleBox[GridBox[{
+         {"i", " "},
+         {" ", "j"}
+        },
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.], {
+             Offset[0.034999999999999996`]}, 
+            Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
+             Offset[0.]}}, "RowsIndexed" -> {}}],
+       FontSize->Rational[39, 4]]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.034999999999999996`]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  xAct`xCoba`CTensor[{{(-3) $CellContext`c^(-2) $CellContext`a[
+        $CellContext`t[]]^(-2) ($CellContext`c^2 $CellContext`k + 
+      Derivative[1][$CellContext`a][
+         $CellContext`t[]]^2), 0, 0, 0}, {
+    0, -$CellContext`c^(-2) $CellContext`a[
+        $CellContext`t[]]^(-2) ($CellContext`c^2 $CellContext`k + 
+      Derivative[1][$CellContext`a][
+         $CellContext`t[]]^2 + 2 $CellContext`a[
+         $CellContext`t[]] Derivative[2][$CellContext`a][
+         $CellContext`t[]]), 0, 0}, {0, 0, -$CellContext`c^(-2) $CellContext`a[
+        $CellContext`t[]]^(-2) ($CellContext`c^2 $CellContext`k + 
+      Derivative[1][$CellContext`a][
+         $CellContext`t[]]^2 + 2 $CellContext`a[
+         $CellContext`t[]] Derivative[2][$CellContext`a][
+         $CellContext`t[]]), 0}, {0, 0, 0, -$CellContext`c^(-2) $CellContext`a[
+        $CellContext`t[]]^(-2) ($CellContext`c^2 $CellContext`k + 
+      Derivative[1][$CellContext`a][
+         $CellContext`t[]]^2 + 2 $CellContext`a[
+         $CellContext`t[]] Derivative[2][$CellContext`a][
+         $CellContext`t[]])}}, {$CellContext`BL, -$CellContext`BL}, 
+   0][$CellContext`i, -$CellContext`j],
+  Editable->False]], "Output",
+ CellChangeTimes->{
+  3.7403712840350037`*^9, 3.740371393146768*^9, 3.740371436387183*^9, 
+   3.7404612465129423`*^9, 3.740466241512663*^9, 3.7404738983570433`*^9, 
+   3.744949421463854*^9, 3.7461583525252943`*^9, 3.76102135428401*^9, 
+   3.761028910241789*^9, 3.7610293983239603`*^9, 3.761029499707568*^9, {
+   3.761029751807391*^9, 3.761029777206045*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Gii00", " ", "=", " ", 
+  RowBox[{"Simplify", "@", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"Sum", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Einstein", "[", "cd", "]"}], "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"n", ",", "BL"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"n", ",", 
+           RowBox[{"-", "BL"}]}], "}"}]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"n", ",", "1", ",", "3"}], "}"}]}], "]"}], "-", 
+     RowBox[{
+      RowBox[{"Einstein", "[", "cd", "]"}], "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "BL"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", 
+         RowBox[{"-", "BL"}]}], "}"}]}], "]"}]}], ")"}], " ", 
+   RowBox[{"(*", 
+    RowBox[{
+     SubsuperscriptBox["G", 
+      RowBox[{" ", "i"}], "i"], "-", 
+     SubsuperscriptBox["G", 
+      RowBox[{" ", "0"}], "0"]}], "*)"}]}]}]], "Input",
+ CellChangeTimes->{{3.7598059223948917`*^9, 3.759805945120553*^9}, 
+   3.759806045863106*^9, {3.7598062021234627`*^9, 3.759806221475868*^9}, 
+   3.7598088045974407`*^9, 3.759809259574916*^9, {3.7598118915841427`*^9, 
+   3.7598119011679373`*^9}, {3.759812324680769*^9, 3.7598123254724693`*^9}, {
+   3.7598160394593983`*^9, 3.759816039864908*^9}, {3.7598161597448378`*^9, 
+   3.7598161766434307`*^9}, {3.759816208735981*^9, 3.759816226736972*^9}, 
+   3.760947226744795*^9, {3.7610154805037127`*^9, 3.761015480890046*^9}, {
+   3.761016944089575*^9, 3.761017011428954*^9}, {3.76101731503333*^9, 
+   3.7610173228506403`*^9}, {3.761017562488055*^9, 3.761017630277433*^9}, {
+   3.761019525508355*^9, 3.7610195326926527`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  FractionBox[
+   RowBox[{"6", " ", 
+    RowBox[{
+     SuperscriptBox[
+      InterpretationBox[
+       StyleBox["a",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`a,
+       Editable->False], "\[Prime]\[Prime]",
+      MultilineFunction->None], "[", 
+     InterpretationBox[
+      StyleBox["t",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`t[],
+      Editable->False], "]"}]}], 
+   RowBox[{
+    SuperscriptBox[
+     InterpretationBox[
+      StyleBox["c",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`c,
+      Editable->False], "2"], " ", 
+    RowBox[{
+     InterpretationBox[
+      StyleBox["a",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`a,
+      Editable->False], "[", 
+     InterpretationBox[
+      StyleBox["t",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`t[],
+      Editable->False], "]"}]}]]}]], "Output",
+ CellChangeTimes->{
+  3.7610173236413603`*^9, 3.761017450373695*^9, 3.761017703374452*^9, 
+   3.761017885094104*^9, {3.761019631509322*^9, 3.761019660117421*^9}, 
+   3.7610208592862*^9, 3.761021354554062*^9, 3.761028910471978*^9, 
+   3.761029398517202*^9, 3.761029499936638*^9, {3.761029751992622*^9, 
+   3.761029777286806*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"G00", " ", "=", " ", 
+  RowBox[{"Simplify", "@", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"Einstein", "[", "cd", "]"}], "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "BL"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", 
+        RowBox[{"-", "BL"}]}], "}"}]}], "]"}], ")"}], " ", 
+   RowBox[{"(*", 
+    SubsuperscriptBox["G", 
+     RowBox[{" ", "0"}], "0"], "*)"}]}]}]], "Input",
+ CellChangeTimes->{{3.759811800338592*^9, 3.7598118021223593`*^9}, {
+   3.759817545448348*^9, 3.759817553999242*^9}, {3.759817659605143*^9, 
+   3.759817667238099*^9}, 3.760947222304812*^9, {3.761015492087267*^9, 
+   3.761015492481494*^9}, {3.761016659150193*^9, 3.7610166702220716`*^9}, 
+   3.761016940909095*^9, {3.7610174147147913`*^9, 3.76101742958438*^9}, {
+   3.7610195376361437`*^9, 3.76101953961199*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  FractionBox[
+   RowBox[{"3", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox["c",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`c,
+         Editable->False], "2"], " ", 
+       InterpretationBox[
+        StyleBox["k",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`k,
+        Editable->False]}], "+", 
+      SuperscriptBox[
+       RowBox[{
+        SuperscriptBox[
+         InterpretationBox[
+          StyleBox["a",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`a,
+          Editable->False], "\[Prime]",
+         MultilineFunction->None], "[", 
+        InterpretationBox[
+         StyleBox["t",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`t[],
+         Editable->False], "]"}], "2"]}], ")"}]}], 
+   RowBox[{
+    SuperscriptBox[
+     InterpretationBox[
+      StyleBox["c",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`c,
+      Editable->False], "2"], " ", 
+    SuperscriptBox[
+     RowBox[{
+      InterpretationBox[
+       StyleBox["a",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`a,
+       Editable->False], "[", 
+      InterpretationBox[
+       StyleBox["t",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`t[],
+       Editable->False], "]"}], "2"]}]]}]], "Output",
+ CellChangeTimes->{
+  3.761015594144157*^9, {3.761016680172689*^9, 3.761016705979671*^9}, 
+   3.7610168336558657`*^9, 3.761017452422895*^9, 3.7610177034113398`*^9, 
+   3.761017885139145*^9, {3.761019631596101*^9, 3.7610196602117*^9}, 
+   3.7610208593302517`*^9, 3.761021354644088*^9, 3.7610289104960127`*^9, 
+   3.7610293986978693`*^9, 3.761029500024063*^9, {3.7610297520997677`*^9, 
+   3.761029777365117*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"G11ii", " ", "=", " ", 
+  RowBox[{"Simplify", "@", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Einstein", "[", "cd", "]"}], "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "BL"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", 
+         RowBox[{"-", "BL"}]}], "}"}]}], "]"}], "-", 
+     RowBox[{
+      RowBox[{"Sum", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Einstein", "[", "cd", "]"}], "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"n", ",", "BL"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"n", ",", 
+            RowBox[{"-", "BL"}]}], "}"}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"n", ",", "1", ",", "3"}], "}"}]}], "]"}], "/", "3"}]}], 
+    ")"}], 
+   RowBox[{"(*", 
+    RowBox[{
+     SubsuperscriptBox["G", 
+      RowBox[{" ", "1"}], "1"], "-", 
+     RowBox[{"(", 
+      RowBox[{
+       SubsuperscriptBox["G", 
+        RowBox[{" ", "i"}], "i"], "/", "3"}], ")"}]}], "*)"}]}]}]], "Input",
+ CellChangeTimes->{{3.7609401534437532`*^9, 3.760940157123164*^9}, {
+   3.7609402269473057`*^9, 3.760940230122613*^9}, 3.760940598433783*^9, 
+   3.760940758827059*^9, {3.7609408129864073`*^9, 3.760940837289225*^9}, {
+   3.760940886171711*^9, 3.760940911542199*^9}, 3.760947218769553*^9, {
+   3.761015503566044*^9, 3.761015503992772*^9}, 3.761016936577833*^9, {
+   3.7610174334740953`*^9, 3.7610174438963747`*^9}, {3.761017640223279*^9, 
+   3.76101767681358*^9}, {3.761017923761838*^9, 3.761017926650425*^9}, {
+   3.7610195429398403`*^9, 3.761019562219924*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{
+  3.761015594232813*^9, 3.7610168337529793`*^9, 3.7610174542003307`*^9, 
+   3.7610177034537983`*^9, 3.761017885189041*^9, 3.7610179427194567`*^9, {
+   3.7610196318353558`*^9, 3.76101966043458*^9}, 3.761020859355229*^9, 
+   3.7610213547324533`*^9, 3.761028910623581*^9, 3.7610293988602343`*^9, 
+   3.7610295001237307`*^9, {3.7610297522475777`*^9, 3.7610297774501143`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"p", "[", 
+     RowBox[{"t", "[", "]"}], "]"}], " ", "=", " ", 
+    RowBox[{"\[Omega]", "*", 
+     RowBox[{"\[Rho]", "[", 
+      RowBox[{"t", "[", "]"}], "]"}]}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"DefScalarFunction", "[", "\[Rho]", "]"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"DefScalarFunction", "[", "p", "]"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"DefConstantSymbol", "[", "w", "]"}], ";"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"T", " ", "=", " ", 
+    RowBox[{"CTensor", "[", 
+     RowBox[{
+      RowBox[{"DiagonalMatrix", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", 
+           RowBox[{"\[Rho]", "[", 
+            RowBox[{"t", "[", "]"}], "]"}]}], "*", 
+          RowBox[{"c", "^", "2"}]}], ",", 
+         RowBox[{"p", "[", 
+          RowBox[{"t", "[", "]"}], "]"}], ",", 
+         RowBox[{"p", "[", 
+          RowBox[{"t", "[", "]"}], "]"}], ",", 
+         RowBox[{"p", "[", 
+          RowBox[{"t", "[", "]"}], "]"}]}], "}"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"BL", ",", 
+        RowBox[{"-", "BL"}]}], "}"}]}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.740463254766033*^9, 3.7404632974381123`*^9}, {
+   3.740463343806569*^9, 3.740463350854125*^9}, {3.740464726855237*^9, 
+   3.740464734798655*^9}, {3.7404649152478724`*^9, 3.7404649398227577`*^9}, {
+   3.740464979247007*^9, 3.740464989702918*^9}, {3.761018915707161*^9, 
+   3.761018934420257*^9}, 3.761019045643443*^9, 3.761019208858693*^9, {
+   3.761020514863035*^9, 3.761020518087331*^9}, {3.761020815879635*^9, 
+   3.761020830130831*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefScalarFunction", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"scalar function \"\>", "\[InvisibleSpace]", 
+   "\[Rho]", "\[InvisibleSpace]", "\<\". \"\>", 
+   "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefScalarFunction, ": Defining ", 
+   "scalar function ", $CellContext`\[Rho], ". ", ""],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7610196318745403`*^9, 3.761019660529324*^9}, 
+   3.761020859387417*^9, 3.761021354813775*^9, 3.761028910645966*^9, 
+   3.7610293990471697`*^9, 3.76102950022803*^9, {3.761029752290884*^9, 
+   3.761029777527994*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefScalarFunction", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"scalar function \"\>", "\[InvisibleSpace]", "p", 
+   "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefScalarFunction, ": Defining ", 
+   "scalar function ", $CellContext`p, ". ", ""],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.7610196318745403`*^9, 3.761019660529324*^9}, 
+   3.761020859387417*^9, 3.761021354813775*^9, 3.761028910645966*^9, 
+   3.7610293990471697`*^9, 3.76102950022803*^9, {3.761029752290884*^9, 
+   3.76102977752878*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"CTensor", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", 
+         SuperscriptBox[
+          InterpretationBox[
+           StyleBox["c",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`c,
+           Editable->False], "2"]}], " ", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["\[Rho]",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`\[Rho],
+          Editable->False], "[", 
+         InterpretationBox[
+          StyleBox["t",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`t[],
+          Editable->False], "]"}]}], ",", "0", ",", "0", ",", "0"}], "}"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["p",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`p,
+         Editable->False], "[", 
+        InterpretationBox[
+         StyleBox["t",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`t[],
+         Editable->False], "]"}], ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["p",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`p,
+         Editable->False], "[", 
+        InterpretationBox[
+         StyleBox["t",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`t[],
+         Editable->False], "]"}], ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0", ",", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["p",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`p,
+         Editable->False], "[", 
+        InterpretationBox[
+         StyleBox["t",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`t[],
+         Editable->False], "]"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"BL", ",", 
+     RowBox[{"-", "BL"}]}], "}"}], ",", "0"}], "]"}]], "Output",
+ CellChangeTimes->{{3.7610196318792*^9, 3.761019660531715*^9}, 
+   3.7610208593902082`*^9, 3.7610213548161592`*^9, 3.761028910669916*^9, 
+   3.761029399049718*^9, 3.761029500232733*^9, {3.7610297523279657`*^9, 
+   3.761029777530397*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Tii00", " ", "=", " ", 
+  RowBox[{"Simplify", "@", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"Sum", "[", 
+      RowBox[{
+       RowBox[{"T", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"n", ",", "BL"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"n", ",", 
+           RowBox[{"-", "BL"}]}], "}"}]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"n", ",", "1", ",", "3"}], "}"}]}], "]"}], "-", 
+     RowBox[{"T", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "BL"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", 
+         RowBox[{"-", "BL"}]}], "}"}]}], "]"}]}], ")"}], " ", 
+   RowBox[{"(*", 
+    RowBox[{
+     SubsuperscriptBox["G", 
+      RowBox[{" ", "i"}], "i"], "-", 
+     SubsuperscriptBox["G", 
+      RowBox[{" ", "0"}], "0"]}], "*)"}]}]}]], "Input",
+ CellChangeTimes->{{3.761019052286474*^9, 3.761019105057328*^9}, {
+  3.761019549252335*^9, 3.761019556164339*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"3", " ", 
+   RowBox[{
+    InterpretationBox[
+     StyleBox["p",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`p,
+     Editable->False], "[", 
+    InterpretationBox[
+     StyleBox["t",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`t[],
+     Editable->False], "]"}]}], "+", 
+  RowBox[{
+   SuperscriptBox[
+    InterpretationBox[
+     StyleBox["c",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`c,
+     Editable->False], "2"], " ", 
+   RowBox[{
+    InterpretationBox[
+     StyleBox["\[Rho]",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`\[Rho],
+     Editable->False], "[", 
+    InterpretationBox[
+     StyleBox["t",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`t[],
+     Editable->False], "]"}]}]}]], "Output",
+ CellChangeTimes->{{3.761019631966951*^9, 3.761019660681188*^9}, 
+   3.761020859415657*^9, 3.76102135490909*^9, 3.761028910753224*^9, 
+   3.761029399247857*^9, 3.761029500337289*^9, {3.76102975243112*^9, 
+   3.7610297776214523`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"T00", " ", "=", " ", 
+  RowBox[{"Simplify", "@", 
+   RowBox[{"(", 
+    RowBox[{"T", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "BL"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", 
+        RowBox[{"-", "BL"}]}], "}"}]}], "]"}], ")"}], " ", 
+   RowBox[{"(*", 
+    SubsuperscriptBox["G", 
+     RowBox[{" ", "0"}], "0"], "*)"}]}]}]], "Input",
+ CellChangeTimes->{
+  3.7610192834958773`*^9, {3.7610195656350117`*^9, 3.761019567564261*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   SuperscriptBox[
+    InterpretationBox[
+     StyleBox["c",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`c,
+     Editable->False], "2"]}], " ", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox["\[Rho]",
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`\[Rho],
+    Editable->False], "[", 
+   InterpretationBox[
+    StyleBox["t",
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`t[],
+    Editable->False], "]"}]}]], "Output",
+ CellChangeTimes->{{3.761019632053282*^9, 3.761019660724305*^9}, 
+   3.76102085944843*^9, 3.761021354993084*^9, 3.761028910828649*^9, 
+   3.761029399535451*^9, 3.761029500433486*^9, {3.761029752533463*^9, 
+   3.7610297777920933`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"T11ii", " ", "=", " ", 
+  RowBox[{"Simplify", "@", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"T", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "BL"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", 
+         RowBox[{"-", "BL"}]}], "}"}]}], "]"}], "-", 
+     RowBox[{
+      RowBox[{"Sum", "[", 
+       RowBox[{
+        RowBox[{"T", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"n", ",", "BL"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"n", ",", 
+            RowBox[{"-", "BL"}]}], "}"}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"n", ",", "1", ",", "3"}], "}"}]}], "]"}], "/", "3"}]}], 
+    ")"}], 
+   RowBox[{"(*", 
+    RowBox[{
+     SubsuperscriptBox["G", 
+      RowBox[{" ", "1"}], "1"], "-", 
+     RowBox[{"(", 
+      RowBox[{
+       SubsuperscriptBox["G", 
+        RowBox[{" ", "i"}], "i"], "/", "3"}], ")"}]}], "*)"}]}]}]], "Input",
+ CellChangeTimes->{{3.7610193285916433`*^9, 3.7610193383033867`*^9}, {
+  3.761019570371211*^9, 3.761019573892387*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{{3.7610196321373177`*^9, 3.761019660821753*^9}, 
+   3.761020859478409*^9, 3.7610213550854473`*^9, 3.7610289109104147`*^9, 
+   3.7610293996192923`*^9, 3.761029500516644*^9, {3.761029752627269*^9, 
+   3.761029777878139*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"Gii00", " ", "\[Equal]", " ", 
+     RowBox[{"8", 
+      RowBox[{"\[Pi]G", "/", 
+       RowBox[{"c", "^", "4"}]}], "*", "Tii00"}]}], ")"}], "//", 
+   RowBox[{
+    RowBox[{"Simplify", "[", 
+     RowBox[{"#", ",", 
+      RowBox[{"{", 
+       RowBox[{"c", ">", "0"}], "}"}]}], "]"}], "&"}]}], "//", 
+  RowBox[{
+   RowBox[{"Expand", "[", 
+    RowBox[{"#", ",", "c"}], "]"}], "&"}]}]], "Input",
+ CellChangeTimes->{{3.761019595937242*^9, 3.761019607570785*^9}, {
+   3.761019693898543*^9, 3.761019723089849*^9}, 3.761020486983658*^9, {
+   3.761021006793824*^9, 3.761021008825391*^9}, 3.761029557010344*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"12", " ", "\[Pi]G", " ", 
+    RowBox[{
+     InterpretationBox[
+      StyleBox["p",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`p,
+      Editable->False], "[", 
+     InterpretationBox[
+      StyleBox["t",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`t[],
+      Editable->False], "]"}]}], "+", 
+   RowBox[{
+    SuperscriptBox[
+     InterpretationBox[
+      StyleBox["c",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`c,
+      Editable->False], "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"4", " ", "\[Pi]G", " ", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\[Rho]",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`\[Rho],
+         Editable->False], "[", 
+        InterpretationBox[
+         StyleBox["t",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`t[],
+         Editable->False], "]"}]}], "+", 
+      FractionBox[
+       RowBox[{"3", " ", 
+        RowBox[{
+         SuperscriptBox[
+          InterpretationBox[
+           StyleBox["a",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`a,
+           Editable->False], "\[Prime]\[Prime]",
+          MultilineFunction->None], "[", 
+         InterpretationBox[
+          StyleBox["t",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`t[],
+          Editable->False], "]"}]}], 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["a",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`a,
+         Editable->False], "[", 
+        InterpretationBox[
+         StyleBox["t",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`t[],
+         Editable->False], "]"}]]}], ")"}]}]}], "\[Equal]", "0"}]], "Output",
+ CellChangeTimes->{{3.761019632220066*^9, 3.761019660917547*^9}, {
+   3.761019716110111*^9, 3.761019723776608*^9}, 3.761020487507051*^9, 
+   3.761020859529669*^9, 3.761021030557747*^9, 3.7610213553200693`*^9, 
+   3.761028911057116*^9, 3.761029399825925*^9, 3.761029500663258*^9, {
+   3.761029752748207*^9, 3.761029777990906*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"G00", " ", "\[Equal]", " ", 
+     RowBox[{"8", 
+      RowBox[{"\[Pi]G", "/", 
+       RowBox[{"c", "^", "4"}]}], "*", "T00"}]}], ")"}], "//", 
+   RowBox[{
+    RowBox[{"Simplify", "[", 
+     RowBox[{"#", ",", 
+      RowBox[{"{", 
+       RowBox[{"c", ">", "0"}], "}"}]}], "]"}], "&"}]}], "//", 
+  RowBox[{
+   RowBox[{"Expand", "[", 
+    RowBox[{"#", ",", 
+     RowBox[{"a", "[", "_", "]"}]}], "]"}], "&"}]}]], "Input",
+ CellChangeTimes->{{3.761019795864822*^9, 3.761019799896048*^9}, {
+   3.761019831649036*^9, 3.761019835116503*^9}, {3.761019891071718*^9, 
+   3.761019897959366*^9}, {3.761020289618313*^9, 3.7610202950175247`*^9}, 
+   3.761020328618038*^9, {3.761020374344593*^9, 3.7610204733032*^9}, {
+   3.761020919730363*^9, 3.761020999442596*^9}, 3.761029444787781*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"8", " ", "\[Pi]G", " ", 
+    RowBox[{
+     InterpretationBox[
+      StyleBox["a",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`a,
+      Editable->False], "[", 
+     InterpretationBox[
+      StyleBox["t",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`t[],
+      Editable->False], "]"}], " ", 
+    RowBox[{
+     InterpretationBox[
+      StyleBox["\[Rho]",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`\[Rho],
+      Editable->False], "[", 
+     InterpretationBox[
+      StyleBox["t",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`t[],
+      Editable->False], "]"}]}], "-", 
+   FractionBox[
+    RowBox[{"3", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        SuperscriptBox[
+         InterpretationBox[
+          StyleBox["c",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`c,
+          Editable->False], "2"], " ", 
+        InterpretationBox[
+         StyleBox["k",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`k,
+         Editable->False]}], "+", 
+       SuperscriptBox[
+        RowBox[{
+         SuperscriptBox[
+          InterpretationBox[
+           StyleBox["a",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`a,
+           Editable->False], "\[Prime]",
+          MultilineFunction->None], "[", 
+         InterpretationBox[
+          StyleBox["t",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`t[],
+          Editable->False], "]"}], "2"]}], ")"}]}], 
+    RowBox[{
+     InterpretationBox[
+      StyleBox["a",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`a,
+      Editable->False], "[", 
+     InterpretationBox[
+      StyleBox["t",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`t[],
+      Editable->False], "]"}]]}], "\[Equal]", "0"}]], "Output",
+ CellChangeTimes->{
+  3.7610198006055202`*^9, 3.761019836043983*^9, 3.761019899050734*^9, {
+   3.761020290948666*^9, 3.76102029531207*^9}, {3.761020378017848*^9, 
+   3.761020384842998*^9}, {3.76102041963074*^9, 3.7610204736022587`*^9}, 
+   3.761020859588993*^9, {3.7610209278226633`*^9, 3.761021000090762*^9}, 
+   3.761021355389888*^9, 3.761028911122429*^9, 3.761029400059969*^9, 
+   3.7610294576735363`*^9, 3.761029500716357*^9, {3.7610297528792267`*^9, 
+   3.761029778111166*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"G11ii", " ", "\[Equal]", " ", 
+     RowBox[{"8", 
+      RowBox[{"\[Pi]G", "/", 
+       RowBox[{"c", "^", "4"}]}], "*", "T11ii"}]}], ")"}], "//", 
+   RowBox[{
+    RowBox[{"Simplify", "[", 
+     RowBox[{"#", ",", 
+      RowBox[{"{", 
+       RowBox[{"c", ">", "0"}], "}"}]}], "]"}], "&"}]}], "//", 
+  "Expand"}]], "Input",
+ CellChangeTimes->{{3.7610210203050203`*^9, 3.761021025721081*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{
+  3.76102102592387*^9, 3.761021355487063*^9, 3.761028911211746*^9, 
+   3.761029400272295*^9, 3.761029500886302*^9, {3.761029753071206*^9, 
+   3.761029778200238*^9}}]
+}, Open  ]]
+},
+WindowSize->{1280, 895},
+WindowMargins->{{1, Automatic}, {Automatic, 11}},
+FrontEndVersion->"11.0 for Linux x86 (64-bit) (July 28, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 578, 13, 59, "Input"],
+Cell[CellGroupData[{
+Cell[1183, 39, 495, 8, 22, "Print"],
+Cell[1681, 49, 769, 16, 24, "Print"],
+Cell[2453, 67, 534, 8, 24, "Print"],
+Cell[2990, 77, 497, 8, 22, "Print"],
+Cell[3490, 87, 652, 10, 43, "Print"],
+Cell[4145, 99, 495, 8, 22, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[4667, 111, 93, 2, 30, "Input"],
+Cell[CellGroupData[{
+Cell[4785, 117, 537, 13, 35, "Input"],
+Cell[CellGroupData[{
+Cell[5347, 134, 733, 14, 24, "Print"],
+Cell[6083, 150, 742, 14, 24, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6874, 170, 735, 20, 35, "Input"],
+Cell[CellGroupData[{
+Cell[7634, 194, 725, 14, 24, "Print"],
+Cell[8362, 210, 777, 15, 24, "Print"],
+Cell[9142, 227, 779, 15, 24, "Print"],
+Cell[9924, 244, 791, 15, 24, "Print"],
+Cell[10718, 261, 787, 15, 24, "Print"],
+Cell[11508, 278, 737, 14, 24, "Print"],
+Cell[12248, 294, 753, 14, 24, "Print"],
+Cell[13004, 310, 904, 19, 26, "Print"],
+Cell[13911, 331, 913, 19, 26, "Print"],
+Cell[14827, 352, 765, 15, 24, "Print"],
+Cell[15595, 369, 823, 16, 24, "Print"],
+Cell[16421, 387, 949, 20, 24, "Print"],
+Cell[17373, 409, 967, 21, 24, "Print"],
+Cell[18343, 432, 995, 21, 24, "Print"],
+Cell[19341, 455, 911, 19, 24, "Print"],
+Cell[20255, 476, 921, 18, 24, "Print"],
+Cell[21179, 496, 1013, 22, 24, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22241, 524, 362, 7, 32, "Input"],
+Cell[22606, 533, 759, 14, 24, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23402, 552, 415, 9, 32, "Input"],
+Cell[23820, 563, 763, 14, 24, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24620, 582, 371, 8, 32, "Input"],
+Cell[24994, 592, 755, 14, 24, "Print"]
+}, Open  ]],
+Cell[25764, 609, 2179, 59, 80, "Input"],
+Cell[CellGroupData[{
+Cell[27968, 672, 539, 12, 35, "Input"],
+Cell[28510, 686, 518, 9, 32, "Output"]
+}, Open  ]],
+Cell[29043, 698, 692, 16, 56, "Input"],
+Cell[CellGroupData[{
+Cell[29760, 718, 599, 12, 52, "Input"],
+Cell[30362, 732, 2679, 92, 63, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33078, 829, 397, 6, 32, "Input"],
+Cell[33478, 837, 10226, 312, 120, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43741, 1154, 235, 6, 35, "Input"],
+Cell[43979, 1162, 12377, 320, 112, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[56393, 1487, 397, 11, 35, "Input"],
+Cell[56793, 1500, 18846, 436, 96, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[75676, 1941, 246, 6, 35, "Input"],
+Cell[75925, 1949, 20644, 470, 104, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[96606, 2424, 1657, 40, 39, "Input"],
+Cell[98266, 2466, 1332, 45, 59, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[99635, 2516, 849, 20, 38, "Input"],
+Cell[100487, 2538, 1943, 64, 63, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[102467, 2607, 1594, 42, 42, "Input"],
+Cell[104064, 2651, 420, 6, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[104521, 2662, 1735, 46, 116, "Input"],
+Cell[CellGroupData[{
+Cell[106281, 2712, 705, 14, 24, "Print"],
+Cell[106989, 2728, 690, 13, 24, "Print"]
+}, Open  ]],
+Cell[107694, 2744, 2487, 81, 42, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[110218, 2830, 971, 30, 38, "Input"],
+Cell[111192, 2862, 1117, 40, 36, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[112346, 2907, 493, 15, 37, "Input"],
+Cell[112842, 2924, 770, 26, 36, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[113649, 2955, 1069, 34, 42, "Input"],
+Cell[114721, 2991, 270, 4, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[115028, 3000, 663, 18, 35, "Input"],
+Cell[115694, 3020, 2297, 75, 56, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[118028, 3100, 836, 21, 33, "Input"],
+Cell[118867, 3123, 2550, 84, 62, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[121454, 3212, 452, 14, 35, "Input"],
+Cell[121909, 3228, 217, 4, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
